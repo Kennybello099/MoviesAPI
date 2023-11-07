@@ -26,12 +26,6 @@ builder.Services.AddScoped<IMovieRepository, MovieRepository>();
 builder.Services.AddScoped<IMovieService, MovieService>();
 
 
-//string xmlCommentFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-//string xmlCommentFullPath = Path.Combine(AppContext.BaseDirectory, xmlCommentFile);
-
-//builder.Services.AddInfrastructure(builder.Configuration, xmlCommentFullPath);
-
-
 
 var app = builder.Build();
 
