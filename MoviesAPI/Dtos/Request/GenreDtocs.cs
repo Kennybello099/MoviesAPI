@@ -11,11 +11,7 @@ namespace MoviesAPI.Dtos.Request
         [JsonIgnore]
         public long GenreId { get; set; }
     }
-    public class GenreDto
-    {
-        public string? Name { get; set; }
-
-    }
+    
     public class UpdateGenreDto
     {
         public string? Name { get; set; }

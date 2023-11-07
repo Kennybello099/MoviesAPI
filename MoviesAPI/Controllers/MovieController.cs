@@ -18,14 +18,12 @@ namespace MoviesAPI.Controllers
         {
             _moviesService = moviesService;
         }
-        [AllowAnonymous]
         [HttpPost("uploadPhoto")]
         public async Task<IActionResult> UploadPhoto([FromForm] UploadPhoto doc)
         {
             var procurementDoc = await _moviesService.UploadPhoto(doc);
             return ProcessResponse(procurementDoc);
         }
-        [AllowAnonymous]
         [HttpPost]
         [Route("")]
         public async Task<IActionResult> AddMovies([FromBody] MoviesRequestDto dto)
@@ -33,7 +31,6 @@ namespace MoviesAPI.Controllers
             var result = await _moviesService.AddMovies(dto);
             return ProcessResponse(result);
         }
-        [AllowAnonymous]
         [HttpGet]
         [Route("GetMovie")]
         public async Task<IActionResult> GetMovieById([FromQuery] long Id)
@@ -55,7 +52,6 @@ namespace MoviesAPI.Controllers
             var result = await _moviesService.UpdateMovies(Id, dto);
             return ProcessResponse(result);
         }
-        [AllowAnonymous]
         [HttpDelete]
         [Route("{Id}")]
         public async Task<IActionResult> DeleteMovie(long Id)
