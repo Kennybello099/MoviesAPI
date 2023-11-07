@@ -146,26 +146,6 @@ namespace MoviesAPI.Repository
                 movie.TheGenre.Add(genre);
 
             };
-
-
-           
-            ////var genres = dto.TheGenre.ToList();
-            //var genres = new List<Genre>();
-
-
-            //foreach (var item in dto.Genre)
-            //{
-            //    var Genre = _context.Genre
-            //        .FirstOrDefault(t => t.MoviesId == Movie.Movies.MoviesId
-            //                          && t.GenreId == item.GenreId);
-
-            //    var genre = new Genre();
-            //    genre.Name = item.Name;
-            //    genres.Add(genre);
-
-            //}
-            //request.TheGenre = genres;
-            //_context.Movies?.Add(request);
         }
     }
     

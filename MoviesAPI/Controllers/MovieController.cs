@@ -57,7 +57,7 @@ namespace MoviesAPI.Controllers
         }
         [AllowAnonymous]
         [HttpDelete]
-        [Route("Movie/{Id}")]
+        [Route("{Id}")]
         public async Task<IActionResult> DeleteMovie(long Id)
         {
             var result = await _moviesService.DeleteMovie(Id);

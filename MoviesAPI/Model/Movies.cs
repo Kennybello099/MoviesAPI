@@ -20,7 +20,6 @@ namespace MoviesAPI.Model
 
         public string? Country { get; set; }
 
-        //public long? GenreId { get; set; }
         public  virtual ICollection<Genre> TheGenre { get; set; }
         public string? Photo { get; set; }
 
