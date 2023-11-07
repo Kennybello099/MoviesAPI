@@ -91,9 +91,7 @@ namespace MoviesAPI.Repository
         public async Task<List<MoviesResponseDto>> GetMovies()
         {
             var moviebyId = from movies in _context.Movies
-                            where movies.IsDeleted == false
-                            //join genre in _context.Genre on movies.GenreId equals genre.GenreId
-                            
+                            where movies.IsDeleted == false                            
 
                             select new MoviesResponseDto
                             {
