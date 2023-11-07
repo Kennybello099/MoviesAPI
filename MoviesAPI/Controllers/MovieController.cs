@@ -19,19 +19,19 @@ namespace MoviesAPI.Controllers
             _moviesService = moviesService;
         }
         [AllowAnonymous]
+        [HttpPost("uploadPhoto")]
+        public async Task<IActionResult> UploadPhoto([FromForm] UploadPhoto doc)
+        {
+            var procurementDoc = await _moviesService.UploadPhoto(doc);
+            return ProcessResponse(procurementDoc);
+        }
+        [AllowAnonymous]
         [HttpPost]
         [Route("")]
         public async Task<IActionResult> AddMovies([FromBody] MoviesRequestDto dto)
         {
             var result = await _moviesService.AddMovies(dto);
             return ProcessResponse(result);
-        }
-        [AllowAnonymous]
-        [HttpPost("uploadPhoto")]
-        public async Task<IActionResult> UploadPhoto([FromForm] UploadPhoto doc)
-        {
-            var procurementDoc = await _moviesService.UploadPhoto(doc);
-            return ProcessResponse(procurementDoc);
         }
         [AllowAnonymous]
         [HttpGet]
